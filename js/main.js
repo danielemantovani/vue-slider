@@ -35,11 +35,18 @@ createApp ({
   },
   methods:{
     nextImage: function() {
-      // if(curIndex)
-      this.activeIndex++;
+      if(this.activeIndex === this.images.length - 1){
+        this.activeIndex = 0;
+      } else{
+        this.activeIndex++;
+      }
     },
     prevImage: function (){
-      this.activeIndex--;
+      if (this.activeIndex > 0){
+        this.activeIndex--
+      } else {
+        this.activeIndex = this.images.length -1;
+      }
     }
   }
 }).mount ("#app");
