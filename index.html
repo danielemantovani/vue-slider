@@ -59,12 +59,13 @@
                   <span class="my-next-hook"></span>
                 </div>
                 <!-- immagini interne -->
-                <img class="img-fluid my-thumbnail" :src="images[0].image" alt="images[0].text" />
-                <img class="img-fluid my-thumbnail" :src="images[1].image" alt="images[1].text" />
-                <img class="img-fluid my-thumbnail" :src="images[2].image" alt="images[2].text" />
-                <img class="img-fluid my-thumbnail" :src="images[3].image" alt="images[3].text" />
-                <img class="img-fluid my-thumbnail" :src="images[4].image" alt="images[4].text" />
-                <!-- etc ... -->
+                <img
+                class="img-fluid my-thumbnail"
+                v-for="(curImage) in images"
+                :src="curImage.image"
+                :alt="curImage.title"
+                />
+                <!-- etc -->
               </div>
             </div>
           </div>
