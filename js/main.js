@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp ({
   data (){
     return{
+      activeIndex: 0,
       images: [
         {
           image: "img/01.webp",
@@ -33,9 +34,13 @@ createApp ({
     }
   },
   methods:{
-    // showStudent: function(index) {
-    //   this.curIndex = index;
-    // }
+    nextImage: function() {
+      // if(curIndex)
+      this.activeIndex++;
+    },
+    prevImage: function (){
+      this.activeIndex--;
+    }
   }
 }).mount ("#app");
 
