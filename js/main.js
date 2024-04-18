@@ -33,7 +33,9 @@ createApp ({
     }
   },
   methods:{
-
+    // showStudent: function(index) {
+    //   this.curIndex = index;
+    // }
   }
 }).mount ("#app");
 
