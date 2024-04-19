@@ -40,7 +40,7 @@
                 <!-- immagini -->
                 <!-- immagine 1 -->
                 <div class="my-carousel-item active" carousel-item="1">
-                  <img :src="images[activeIndex].image" alt="images[activeIndex].title">
+                  <img :src="images[activeIndex].image" :alt="images[activeIndex].title">
                   <div class="item-description px-3">
                     <h2>{{images[activeIndex].title}}</h2>
                     <p>{{images[activeIndex].text}}</p>
@@ -61,9 +61,11 @@
                 <!-- immagini interne -->
                 <img
                 class="img-fluid my-thumbnail"
-                v-for="(curImage) in images"
+                v-for="(curImage, index) in images"
+                @click="activeIndex = index"
                 :src="curImage.image"
                 :alt="curImage.title"
+                :class="{'active' : activeIndex === index}" 
                 />
                 <!-- etc -->
               </div>
